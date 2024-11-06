@@ -39,6 +39,13 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net461</TargetFrameworks>
+    <RootNamespace>HowToStartTestingWithNUnit</RootNamespace>
+    <AssemblyName>HowToStartTestingWithNUnit</AssemblyName>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="MathUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
