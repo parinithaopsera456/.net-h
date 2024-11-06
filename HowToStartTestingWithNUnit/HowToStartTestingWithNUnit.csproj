@@ -31,7 +31,7 @@
   </PropertyGroup>
     <PropertyGroup>
     <!-- Update to a higher version if needed -->
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
