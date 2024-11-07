@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   
-  <!-- Set to .NET Framework 4.8 as your target framework -->
+  <!-- Set to .NET Framework 4.6.1 as your target framework -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,10 +11,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HowToStartTestingWithNUnit</RootNamespace>
     <AssemblyName>HowToStartTestingWithNUnit</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion> <!-- Change to v4.8 for Framework 4.8 -->
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion> <!-- Change to v4.8 for Framework 4.8 if needed -->
     <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild> <!-- No need to generate package for .NET Framework -->
     <PackageId>HowToStartTestingWithNUnit</PackageId>
     <Version>1.0.0</Version>
