@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   
+  <!-- Set to .NET Framework 4.8 as your target framework -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,14 +11,18 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HowToStartTestingWithNUnit</RootNamespace>
     <AssemblyName>HowToStartTestingWithNUnit</AssemblyName>
-    <TargetFramework>net6.0</TargetFramework> <!-- Set to .NET 6.0 only -->
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion> <!-- Change to v4.8 for Framework 4.8 -->
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild> <!-- No need to generate package for .NET Framework -->
     <PackageId>HowToStartTestingWithNUnit</PackageId>
     <Version>1.0.0</Version>
     <Authors>Pari</Authors>
     <Description>A description of your package.</Description>
   </PropertyGroup>
-  
+
+  <!-- Build settings for Debug and Release -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -27,7 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -37,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
+  <!-- References for .NET Framework (make sure you're not using .NET Core/6.0-specific packages) -->
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,15 +53,18 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  
+
+  <!-- Source code files -->
   <ItemGroup>
     <Compile Include="MathUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
 
+  <!-- If needed, add NuGet packaging dependency for .NET Framework (less common) -->
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
   </ItemGroup>
 
+  <!-- Import the targets file for .NET Framework -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
