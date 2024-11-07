@@ -12,6 +12,15 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
+  <PropertyGroup>
+  <TargetFramework>net6.0</TargetFramework> <!-- Make sure this is set to a compatible framework -->
+  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  <PackageId>HowToStartTestingWithNUnit</PackageId> <!-- Customize PackageId if needed -->
+  <Version>1.0.0</Version> <!-- Set your desired version -->
+  <Authors>Pari</Authors>
+  <Description>A description of your package.</Description>
+</PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -29,9 +38,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-    <PropertyGroup>
-    <!-- Update to a higher version if needed -->
+  <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <PackageId>MyPackage</PackageId> <!-- Define Package ID -->
+    <Version>1.0.0</Version>          <!-- Define Version -->
+    <Authors>Pari</Authors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,5 +58,8 @@
     <Compile Include="MathUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+  <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
+</ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
